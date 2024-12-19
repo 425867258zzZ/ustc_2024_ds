@@ -1,0 +1,32 @@
+@startuml 1
+start
+
+:开始;
+
+:检查 i 是否在有效范围内;
+if (i >= 1 && i <= listLength(p)) then (是)
+  :移动 p 到第 i-1 个节点;
+  while (k < i - 1)
+    :p = p->next;
+    :k = k + 1;
+  endwhile
+  
+  :保存被删除节点的下一个节点;
+  :tmp = p->next;
+  
+  :删除节点;
+  :p->next = tmp->next;
+  
+  :保存被删除节点的数据到 *e;
+  :*e = tmp->data;
+  
+  :释放被删除节点的内存;
+  :free(tmp);
+  
+  :返回 1;
+else (否)
+  :返回 0;
+endif
+
+stop
+@enduml

@@ -1,0 +1,26 @@
+@startuml 1
+start
+
+:开始;
+
+if (i >= 1 && i <= listLength(p)) then (是)
+  :初始化 k = 0;
+  :设置 p 为头节点;
+  while (p->next != NULL) is (循环)
+    :p = p->next;
+    :k = k + 1;
+    if (index == i) then (找到第i个元素)
+      :*e = p->data;
+      :返回 index;
+      stop
+    else (继续循环)
+      :继续循环;
+    endif
+  endwhile
+  :返回 0; 
+else (否)
+  :返回 0;
+endif
+
+stop
+@enduml

@@ -1,0 +1,23 @@
+@startuml 里
+start
+
+:开始;
+
+if (i >= 1 && i <= listLength(p) + 1) then (是)
+  :移动指针p到第i-1个节点;
+  :create new node q;
+  if (q==NULL) then (否)
+    :输出"结点分配失败！";
+    stop
+  else (是)
+    :设置新节点q的数据为e;
+    :设置新节点q的next为p->next;
+    :设置p->next为新节点q;
+    :返回新节点q;
+  endif
+else (否)
+  :返回NULL;
+endif
+
+stop
+@enduml
