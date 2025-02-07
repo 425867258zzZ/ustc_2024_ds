@@ -78,5 +78,5 @@
 		"streambuf": "cpp",
 		"typeinfo": "cpp"
 	},
-	"C_Cpp.errorSquiggles": "enabled" // 波浪线
+	"C_Cpp.errorSquiggles": "disabled" // 波浪线
 }
